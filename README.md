@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/skaji/Scoreboard.svg?branch=master)](https://travis-ci.org/skaji/Scoreboard)
-[![AppVeyor Status](https://ci.appveyor.com/api/projects/status/github/skaji/Scoreboard?branch=master&svg=true)](https://ci.appveyor.com/project/skaji/Scoreboard)
 
 # NAME
 

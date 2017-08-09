@@ -10,7 +10,7 @@ use Time::HiRes ();
 our $VERSION = '0.001';
 
 # perl -MList::Util=uniq -E 'say for uniq map { int $_ } map { 1.103 ** $_ } 1..114'
-my @HISTGRAM = qw(
+my @HISTOGRAM = qw(
     0
     1
     2
@@ -120,10 +120,10 @@ sub _tick {
     ($wip - 300, $wip);
 }
 
-sub _histgram_index {
+sub _histogram_index {
     my $latency = shift;
     for my $i (0..99) {
-        if ($latency < $HISTGRAM[$i]) {
+        if ($latency < $HISTOGRAM[$i]) {
             return $i;
         }
     }
@@ -212,7 +212,7 @@ sub set {
     $self->_update(sub {
         my $data = shift;
         $data->{latency}{histgram}{$name} ||= [ (0) x 100 ];
-        $data->{latency}{histgram}{$name}[ _histgram_index $latency ]++;
+        $data->{latency}{histgram}{$name}[ _histogram_index $latency ]++;
         $data->{latency}{count}{$name}++;
         $data->{latency}{sum}{$name} += $latency;
     });
