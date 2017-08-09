@@ -2,7 +2,7 @@ package Scoreboard;
 use strict;
 use warnings;
 
-use Fcntl qw(:flock :DEFAULT);
+use Fcntl ();
 use IO::Handle;
 use Storable ();
 use Time::HiRes ();
